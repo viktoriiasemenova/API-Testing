@@ -1,0 +1,69 @@
+API Test Cases - Swagger Petstore
+
+API_TC01 - Create User
+
+Method: POST
+Endpoint: /v2/user
+Test Data:
+{
+  "id": 0,
+  "username": "vikki",
+  "firstName": "vikki",
+  "lastName": "sem",
+  "email": "vikkisem@gmail.com",
+  "password": "3223",
+  "phone": "9999",
+  "userStatus": 0
+}
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response body contains "code": 200
+ • User is successfully created in the system
+
+API_TC02 - Get User by Username
+
+Method: GET
+Endpoint: /v2/user/{{user name}}
+
+Test Data:
+{{user name}} = vikki
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response contains:
+ • "username": "vikki"
+ • "firstName": "vikki"
+ • "lastName": "sem"
+ • "email": "vikkisem@gmail.com"
+ • All returned values match the created user data
+ • No empty or null required fields
+
+API_TC03 - Update User
+
+Method: PUT
+Endpoint: /v2/user/{{user name}}
+Test Data:
+
+{
+  "id": 0,
+  "username": "vikki123",
+  "firstName": "sem123",
+  "lastName": "string",
+  "email": "string",
+  "password": "string",
+  "phone": "string",
+  "userStatus": 0
+}
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • User data is updated successfully
+ • After sending GET request:
+ • "firstName" is updated to "sem123"
+ • Other fields reflect updated values
