@@ -67,3 +67,120 @@ Expected Results:
  • After sending GET request:
  • "firstName" is updated to "sem123"
  • Other fields reflect updated values
+
+API_TC04 - Delete User
+
+Method: DELETE
+Endpoint: /v2/user/{{user name}}
+
+Test Data:
+{{user name}} = vikki
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response confirms successful deletion
+ • User is removed from the system
+ • Subsequent GET request returns:
+ • 404 Not Found
+
+API_TC05 - User Login
+
+Method: GET
+Endpoint:
+/v2/user/login?username={{user name}}&password={{user name}}
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response contains login confirmation message
+ • Message contains something like:
+ • "logged in user session"
+ • User session is successfully created
+
+API_TC06 - User Logout
+
+Method: GET
+Endpoint: /v2/user/logout
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response confirms successful logout
+ • User session is terminated
+
+API_TC07 - Place Order
+
+Method: POST
+Endpoint: /v2/store/order
+
+Test Data:
+
+{
+  "id": 0,
+  "petId": 12,
+  "quantity": 3,
+  "shipDate": "2026-02-12T10:46:18.812Z",
+  "status": "placed",
+  "complete": true
+}
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response body contains:
+ • "id" (order ID)
+ • "petId": 12
+ • "quantity": 3
+ • Returned data matches request payload
+ • Order is successfully created
+
+API_TC08 - Get Order by ID
+
+Method: GET
+Endpoint: /v2/store/order/{{orderid}}
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response contains:
+ • "id" = {{orderid}}
+ • "petId"
+ • "quantity"
+ • "status"
+ • Returned data matches previously created order
+
+API_TC09 - Get Inventory
+
+Method: GET
+Endpoint: /v2/store/inventory
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response contains inventory object with statuses:
+ • "available"
+ • "pending"
+ • "sold"
+ • Values are numeric (quantities)
+
+API_TC10 - Delete Order
+
+Method: DELETE
+Endpoint: /v2/store/order/{{orderid}}
+
+Expected Status: 200 OK
+
+Expected Results:
+ • Response status code is 200 OK
+ • Response confirms successful deletion
+ • Order is removed from the system
+ • Subsequent GET request returns:
+ • 404 Not Found
+
+
