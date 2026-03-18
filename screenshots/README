@@ -1,0 +1,101 @@
+# API Testing Portfolio
+
+This section contains API testing artifacts created using Postman for the Swagger Petstore API.
+
+---
+
+## Tools Used
+
+- Postman (API testing)
+- GitHub (version control and portfolio)
+- REST API
+
+---
+
+## Project Description
+
+The purpose of this project is to demonstrate API testing skills including:
+
+- Sending HTTP requests (GET, POST, PUT, DELETE)
+- Validating response status codes
+- Verifying response body structure and data
+- Working with variables in Postman
+- Documenting test cases
+
+---
+
+## Project Structure
+API-Testing
+│
+├── api_test_cases.md
+├── api tests.postman_collection.json
+└── screenshots
+---
+
+## Scope of Testing
+
+The following API functionalities were tested:
+
+### User API
+- Create User
+- Get User by Username
+- Update User
+- Delete User
+- User Login
+- User Logout
+
+### Store API
+- Place Order
+- Get Order by ID
+- Delete Order
+- Get Inventory
+
+---
+
+## Test Cases
+
+Test cases are documented in:
+api_test_cases.md
+
+They include:
+- Endpoint
+- Method
+- Test Data
+- Expected Status
+- Expected Results
+
+---
+
+## Validation Performed
+
+- Status code validation (200, 404, etc.)
+- Response body structure validation
+- Data consistency checks
+
+---
+
+## Notes
+
+- Automated tests (Postman scripts) were not implemented
+- Validation was performed manually
+- Swagger Petstore API may return 200 status even for non-existing entities
+
+---
+
+## Screenshots
+
+Examples of API requests and responses are available in the screenshots folder.
+
+---
+
+## How to Run
+
+1. Import postman_collection.json into Postman
+2. Set variables (e.g., username)
+3. Run requests manually
+
+---
+
+## Conclusion
+
+This project demonstrates basic API testing skills, including working with REST APIs, validating responses, and documenting test cases for QA purposes.
